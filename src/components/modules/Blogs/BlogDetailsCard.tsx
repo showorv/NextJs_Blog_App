@@ -15,7 +15,7 @@ export default async function BlogDetailsCard({ blog }: { blog: any }) {
       <div className="flex items-center gap-4 mb-8">
         <Image
           src={
-            blog.author.picture ||
+            blog?.author?.picture ||
             "https://cdn-icons-png.flaticon.com/512/9385/9385289.png"
           }
           alt={blog?.author?.name}
@@ -31,7 +31,7 @@ export default async function BlogDetailsCard({ blog }: { blog: any }) {
             )}
           </p>
           <p className="text-gray-500 text-sm">
-            {new Date(blog.createdAt).toLocaleDateString()} • {blog.views} views
+            {new Date(blog.createdAt).toLocaleDateString()} • {blog.view} views
           </p>
         </div>
       </div>

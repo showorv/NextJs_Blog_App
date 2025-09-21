@@ -12,7 +12,7 @@ export default function BlogCard({ post }: { post: any }) {
         {post.thumbnail ? (
           <div className="relative h-56 w-full overflow-hidden">
             <Image
-              src={post.thumbnail}
+              src={post?.thumbnail }
               alt={post.title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"
@@ -37,7 +37,7 @@ export default function BlogCard({ post }: { post: any }) {
             <div className="flex items-center gap-2">
               <Image
                 src={
-                  post.author.picture ||
+                  post?.author?.picture ||
                   "https://cdn-icons-png.flaticon.com/512/9385/9385289.png"
                 }
                 alt={post.author.name}
@@ -46,7 +46,7 @@ export default function BlogCard({ post }: { post: any }) {
                 className="rounded-full border-2 border-gray-200 dark:border-gray-700"
               />
               <span className="text-gray-600 dark:text-gray-300 text-sm flex items-center gap-1">
-                {post.author.name}
+                {post?.author?.name}
                 {post.author.isVerified && (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@ export default function BlogCard({ post }: { post: any }) {
               </span>
             </div>
             <span className="text-gray-500 dark:text-gray-400 text-sm">
-              {post.views} views
+              {post.view} views
             </span>
           </div>
 
