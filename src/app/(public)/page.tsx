@@ -5,7 +5,8 @@ export default async function HomePage() {
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/post`, {
     next: {
-      revalidate: 30 // 30 scnd por por updated post thkle ta dekhabe isr er maddhome. homepage e ssr na kora better loading nibe
+      // revalidate: 30 // 30 scnd por por updated post thkle ta dekhabe isr er maddhome. homepage e ssr na kora better loading nibe
+      tags: ["BLOGS"]
     }
   } )
   const {data:blogs} = await res.json()

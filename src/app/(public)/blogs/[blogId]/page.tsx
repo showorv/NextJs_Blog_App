@@ -18,6 +18,21 @@ export const generateStaticParams = async ()=>{
     })) // ekkhn build howar smy prothom 2 ta post build hoye jabe.laoding ashbe na
 }
 
+
+export const generateMetadata = async ({params}: {params: Promise<{blogId: string}>})=>{
+
+  const {blogId} = await params
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/post/${blogId}`)
+
+  const blog = await res.json()
+
+  return {
+    title: blog?.title,
+    description: blog?.content
+  }
+
+
+}
 export default async function BlogDetails({params}: {params: Promise<{blogId: string}>}) {
 
     const {blogId} = await params

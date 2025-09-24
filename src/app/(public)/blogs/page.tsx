@@ -1,4 +1,10 @@
 import BlogCard from "@/components/modules/Blogs/BlogCard";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All blogs || Next Blogs",
+  description: "All blogs description"
+}
 
 const AllBlogsPage =async () => {
 
