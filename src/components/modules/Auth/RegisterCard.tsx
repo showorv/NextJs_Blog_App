@@ -16,7 +16,7 @@ import {
 
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
-import register from "@/actions/auth";
+import {register }from "@/actions/auth";
 
 // type RegisterFormValues = {
 //   name: string;
